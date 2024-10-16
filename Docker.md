@@ -64,3 +64,10 @@
 4. The Docker daemon streamed that output to the Docker client, which sent it to your terminal.
 
 ---
+
+### **Docker `pull` vs. Docker `run`**
+
+- **`docker pull`**: Downloads the image to your system.
+- **`docker run`**: Downloads the image (if not present) and creates a container to run the image.
+
+---
