@@ -1,23 +1,31 @@
 
 # Docker Installation and Usage Guide
 
-## Install Docker
+## Install Docker Scripted Approach
 
 ```bash
-sudo -i
-curl -fsSL https://get.docker.com -o install-docker.sh
-ls
-sudo sh install-docker.sh
+  sudo -i
+  curl -fsSL https://get.docker.com -o install-docker.sh
+  ls
+  sudo sh install-docker.sh
+```
+## Debian or ubuntu Approach to download and install-docker
+
+```bash
+    sudo —i
+    apt-get update
+    apt install docker. io
+    docker —v
 ```
 
 ## Verify Docker Installation
 
 ```bash
-docker pull hello-world
-docker images
-docker run hello-world
-docker ps    # Running processes
-docker ps -a # All or archives
+  docker pull hello-world
+  docker images
+  docker run hello-world
+  docker ps    # Running processes
+  docker ps -a # All or archives
 ```
 
 ### Docker Initialization Steps
@@ -35,16 +43,16 @@ docker ps -a # All or archives
 - `docker run`: Download the image and create a container.
 
 ```bash
-docker run -it ubuntu  # -it is interactive mode and moves inside the container at the beginning
-exit
+  docker run -it ubuntu  # -it is interactive mode and moves inside the container at the beginning
+  exit
 
-docker ps -a
-docker start CONTAINER_ID
-docker logs CONTAINER_ID
-docker inspect CONTAINER_ID
-docker rm CONTAINER_ID
-docker exec -it CONTAINER_ID bin/bash  # Move inside the container anytime after starting
-docker stop CONTAINER_ID
+  docker ps -a
+  docker start CONTAINER_ID
+  docker logs CONTAINER_ID
+  docker inspect CONTAINER_ID
+  docker rm CONTAINER_ID
+  docker exec -it CONTAINER_ID bin/bash  # Move inside the container anytime after starting
+  docker stop CONTAINER_ID
 ```
 
 ### Image and Container Sizes
@@ -65,17 +73,17 @@ docker stop CONTAINER_ID
 ### Nginx Example
 
 ```bash
-docker run nginx  # The nginx is working fine but not reachable from browser.
-docker run -p 80:80 nginx  # Configure port 80 of nginx to port 80 of the machine.
-docker run --name docker-nginx -p 80:80 nginx  # Assign a name to the container.
+  docker run nginx  # The nginx is working fine but not reachable from browser.
+  docker run -p 80:80 nginx  # Configure port 80 of nginx to port 80 of the machine.
+  docker run --name docker-nginx -p 80:80 nginx  # Assign a name to the container.
 ```
 
 #### Serving Custom HTML with Nginx
 
 ```bash
-mkdir -p ~/docker-nginx/html
-cd ~/docker-nginx/html
-vi index.html
+  mkdir -p ~/docker-nginx/html
+  cd ~/docker-nginx/html
+  vi index.html
 ```
 
 ```html
@@ -94,13 +102,13 @@ vi index.html
 ```
 
 ```bash
-docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+  docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
 ```
 
 ## Jenkins Installation
 
 ```bash
-docker run -it -d -p 8080:8080 jenkins/jenkins:latest
+  docker run -it -d -p 8080:8080 jenkins/jenkins:latest
 ```
 
 ## Creating a Custom Docker Image
@@ -112,15 +120,16 @@ MAINTAINER clouddevopshub@gmail.com
 RUN apt-get update                # OS level command
 RUN apt-get install nginx -y      # OS level command
 CMD ["echo", "Image created"]     # Application level command
+
 ```
 
 ### Build and Push Image
 
 ```bash
-docker build -t mynginxbatch35 .  # Create image in the current directory with tag name mynginxbatch35
-docker login
-docker push themannu/mynginxbatch35
-docker pull themannu/mynginxbatch35  # Verify the image is on Docker Hub
+  docker build -t mynginxbatch35 .  # Create image in the current directory with tag name mynginxbatch35
+  docker login
+  docker push themannu/mynginxbatch35
+  docker pull themannu/mynginxbatch35  # Verify the image is on Docker Hub
 ```
 
 ### Useful Resources
@@ -148,19 +157,19 @@ docker pull themannu/mynginxbatch35  # Verify the image is on Docker Hub
 ### Docker Troubleshooting and Monitoring
 
 ```bash
-docker inspect <container_name>
-docker inspect <container_id>
-docker logs <container_name>
-docker logs <container_id>
-docker logs -f <container_name>  # Real-time log
-docker stats <container_id>
-docker top <container_name>
-docker top <container_id>
+  docker inspect <container_name>
+  docker inspect <container_id>
+  docker logs <container_name>
+  docker logs <container_id>
+  docker logs -f <container_name>  # Real-time log
+  docker stats <container_id>
+  docker top <container_name>
+  docker top <container_id>
 ```
 
 ### Cleanup or Prune Unused (Dangling) Images
 
 ```bash
-docker system df
-docker image prune -a
+  docker system df
+  docker image prune -a
 ```

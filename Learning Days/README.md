@@ -84,6 +84,42 @@ so, in a nutshell, container base images are typically smaller compared to VM im
 
 I hope it is now very clear why containers are light weight in nature.
 
+### Docker Terminologies
+
+#### Nodes  
+
+Node refers to a physical or virtual machine running an instance of the Docker Engine.
+
+- **Manager Node**: This type of node is responsible for managing and orchestrating the Swarm. Manager nodes handle the cluster's state, schedule services, and ensure that the desired state of the system is maintained. By default, manager nodes also serve as worker nodes, meaning they can execute tasks as well.
+
+- **Worker Node**: A worker node's primary role is to execute tasks that are assigned to it by a manager node. Worker nodes do not manage the swarm's state but simply follow the instructions of manager nodes to run containers and services.
+
+In a Swarm, you can have multiple worker nodes but only a limited number of manager nodes for stability and performance.
+
+#### Docker Image
+
+A **Docker image** serves as the foundation for containers. It is an immutable, ordered collection of filesystem layers and metadata (execution parameters) used to run applications in container environments. Here's a breakdown:
+
+- **Layers**: Images are built using a series of layers, each representing changes made to the filesystem (like adding files or installing software). These layers are stacked on top of each other to form the complete image.
+  
+- **No State**: Docker images are stateless, meaning they do not store any runtime data. They remain unchanged once created.
+
+- **Execution Parameters**: The image contains essential configurations like environment variables, default commands, or entry points, which guide how containers based on that image should run.
+
+When a container is created from an image, a new writable layer is added on top of the image's layers, allowing the container to have a dynamic, stateful runtime environment, while the underlying image remains unchanged.
+
+#### Docker Conatiner
+
+A **Docker container** is a runtime instance of a Docker image, which means it is a running process that is created based on the image. A container consists of:
+
+- **Docker Image**: The underlying blueprint that provides the application code, libraries, dependencies, and any other tools the container needs.
+  
+- **Execution Environment**: The container runs in a lightweight, isolated environment that includes everything needed to execute the image, such as CPU, memory, storage, and networking capabilities.
+  
+- **Standard Set of Instructions**: Containers have pre-defined instructions from the image (like entry points, commands, and environment variables) that dictate how the application inside the container should run.
+
+The analogy to **shipping containers** highlights Docker's role in standardizing the way software is packaged, shipped, and run across different environments, ensuring portability and consistency. Just as shipping containers provide a universal format for transporting goods, Docker containers provide a universal way to run software on any system that supports Docker.
+
 
 
 ## Docker
@@ -117,6 +153,7 @@ There are three important things,
 
 
 ### Understanding the terminology (Inspired from Docker Docs)
+
 
 
 #### Docker daemon
