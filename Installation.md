@@ -28,7 +28,7 @@
   docker ps -a # All or archives
 ```
 
-### Docker Initialization Steps
+### Docker Initialization Steps Explaination
 
 1. **The Docker client** contacted the Docker daemon.
 2. **The Docker daemon** pulled the "hello-world" image from Docker Hub.
