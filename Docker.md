@@ -227,3 +227,65 @@
 ```
 
 ---
+
+### **Dockerfile Example**
+
+1. **Create a Dockerfile**:
+```bash
+   vi Dockerfile  # Create a Dockerfile for building a custom image
+```
+
+   **Dockerfile content**:
+```dockerfile
+   FROM ubuntu  # Specify the base image
+   MAINTAINER clouddevopshub@gmail.com  # Define the maintainer of the image
+   RUN apt-get update  # Update the package list
+   RUN apt-get install nginx -y  # Install Nginx
+   CMD ["echo", "Image created"]  # Command to run when the container starts
+```
+
+2. **Build Docker image**:
+```bash
+   docker build -t mynginxbatch35 .  # Build the Docker image with the specified tag
+```
+
+3. **Push image to Docker Hub**:
+```bash
+   docker login  # Log in to Docker Hub
+   docker push <docker-hub-username>/mynginxbatch35  # Push the image to Docker Hub
+```
+
+4. **Pull image from Docker Hub**:
+```bash
+   docker pull <docker-hub-username>/mynginxbatch35  # Download the image from Docker Hub to the local machine
+```
+
+---
+### **Backup and Restore Docker Images**
+
+1. **Commit running container to an image**:
+```bash
+   docker commit <CONTAINER ID> <new image name>  # Create a new image from a running container
+```
+
+2. **Save Docker image to a tar file**:
+```bash
+   docker save <image name> > mybackup.tar  # Save a Docker image as a tar file for backup
+```
+
+3. **Upload backup to AWS S3**:
+```bash
+   aws s3 cp mybackup.tar s3://<your-bucket-name>/  # Upload the backup file to AWS S3
+```
+
+4. **Download backup from S3**:
+```bash
+   aws s3 cp s3://<your-bucket-name>/mybackup.tar ./  # Download the backup file from AWS S3
+```
+
+5. **Restore image from tar file**:
+```bash
+   docker load < mybackup.tar  # Restore a Docker image from a tar file
+```
+
+---
