@@ -184,3 +184,37 @@
 ```
 
 ---
+
+### **Serving Custom HTML with Nginx**
+
+1. **Create a directory for HTML files**:
+```bash
+   mkdir -p ~/docker-nginx/html  # Create a directory for Nginx HTML files
+   cd ~/docker-nginx/html  # Navigate to the HTML directory
+   vi index.html  # Create or edit an index.html file for the Nginx server
+```
+
+2. **Run Nginx with a mounted volume for HTML**:
+```bash
+   docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx  # Run Nginx with a volume for custom HTML
+```
+
+---
+
+### **Custom HTML Content**
+```html
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <title>Docker nginx Tutorial</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello Learning team with Devanshau, Debyan, Sabir, Nisha</h1>
+      <p>This nginx page is brought to you by Docker, in front of Sri Ram, Arun, Ravi, Naveen, Sabita</p>
+    </div>
+  </body>
+</html>
+```
+
+---
