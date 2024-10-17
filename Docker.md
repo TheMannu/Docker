@@ -71,3 +71,52 @@
 - **`docker run`**: Downloads the image (if not present) and creates a container to run the image.
 
 ---
+
+### **Container Management Commands**
+
+1. **Run Ubuntu in interactive mode**:
+```bash
+   docker run -it ubuntu  # Start an interactive Ubuntu container
+```
+
+2. **Exit the container**:
+```bash
+   exit  # Exit from the running container's shell
+```
+
+3. **List all containers again**:
+```bash
+   docker ps -a  # Show all containers to check the state of the previously started container
+```
+
+4. **Start a stopped container**:
+```bash
+   docker start <CONTAINER ID>  # Start a container that is stopped
+```
+
+5. **View container logs**:
+```bash
+   docker logs <CONTAINER ID>  # Retrieve logs from a specified container
+```
+
+6. **Inspect container details**:
+```bash
+   docker inspect <CONTAINER ID>  # Display detailed information about a container
+```
+
+7. **Remove a container**:
+```bash
+   docker rm <CONTAINER ID>  # Delete a specified container
+```
+
+8. **Execute a command inside a running container**:
+```bash
+   docker exec -it <CONTAINER ID> bin/bash  # Run a bash shell inside a running container
+```
+
+9. **Stop a running container**:
+```bash
+   docker stop <CONTAINER ID>  # Stop a running container gracefully
+```
+
+---

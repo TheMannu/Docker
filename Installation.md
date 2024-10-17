@@ -1,6 +1,14 @@
 
 # Docker Installation and Usage Guide
 
+## Install Docker on Windows
+-  Go to this link 
+  - https://docs.docker.com/desktop/install/windows-install/
+  - Download the Docker Desktop as pr your version (x86_64) 
+  - Default name of exe file  will be downloaded (Docker Desktop Installer.exe)
+  - Click on this file and install
+
+  
 ## Install Docker Scripted Approach
 
 ```bash
