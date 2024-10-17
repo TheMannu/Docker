@@ -165,3 +165,22 @@
 ```
 
 ---
+
+### **Working with Nginx**
+
+1. **Run Nginx (unreachable by browser)**:
+```bash
+   docker run nginx  # Start an Nginx container without port mapping
+```
+
+2. **Run Nginx with port configuration**:
+```bash
+   docker run -p 80:80 nginx  # Map port 80 of the container to port 80 of the host
+```
+
+3. **Run Nginx with a custom container name**:
+```bash
+   docker run --name docker-nginx -p 80:80 nginx  # Start Nginx container with a specified name
+```
+
+---
