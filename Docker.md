@@ -218,3 +218,12 @@
 ```
 
 ---
+
+### **Jenkins Installation**
+
+1. **Run Jenkins in Docker**:
+```bash
+   docker run -it -d -p 8080:8080 jenkins/jenkins:latest  # Start a Jenkins container and map port 8080
+```
+
+---
