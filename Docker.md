@@ -120,3 +120,15 @@
 ```
 
 ---
+
+### **Image and OS Size Comparison**
+
+- **Ubuntu Docker Image**: 78MB  
+- **Ubuntu Full Operating System**: 2GB executable file, 6GB when running.
+
+---
+
+### **Smallest OS Image**:  
+- **Alpine Linux** is the smallest Docker image.
+
+---
