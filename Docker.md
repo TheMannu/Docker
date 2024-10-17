@@ -132,3 +132,36 @@
 - **Alpine Linux** is the smallest Docker image.
 
 ---
+### **Container Lifecycle Commands**
+
+1. **Pause all processes in a container**:
+```bash
+   docker pause <CONTAINER ID>  # Suspend all processes in the specified container
+```
+
+2. **Stop the main process in a container**:
+```bash
+   docker stop <CONTAINER ID>  # Gracefully stop the main process in a specified container
+```
+
+3. **Forcefully kill a container**:
+ ```bash
+   docker kill <CONTAINER ID>  # Immediately kill a running container
+```
+
+4. **Forcefully remove a container**:
+```bash
+   docker rm -f <CONTAINER ID>  # Forcefully delete a specified container
+```
+
+5. **Forcefully remove an image**:
+```bash
+   docker rmi -f <image name>  # Forcefully delete a specified Docker image
+```
+
+6. **Start a stopped container**:
+```bash
+   docker start <CONTAINER ID>  # Restart a previously stopped container
+```
+
+---
