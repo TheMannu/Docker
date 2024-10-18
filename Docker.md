@@ -333,3 +333,17 @@
 ```
 
 ---
+
+### **Cleanup or Prune Unused (Dangling) Images**
+
+1. **Display disk usage by Docker**:
+```bash
+   docker system df  # Show disk usage for images, containers, and volumes
+```
+
+2. **Prune unused images**:
+```bash
+   docker image prune -a  # Remove all unused images from the system
+```
+
+---
