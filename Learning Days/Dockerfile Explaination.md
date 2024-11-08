@@ -24,3 +24,16 @@ RUN apt-get update
 RUN apt-get install nginx -y
 CMD ["echo", "Image created"]
 ```
+
+### Common Dockerfile Commands Overview
+
+- **FROM**: Select the base image
+- **RUN**: Execute specified command
+- **ENTRYPOINT**: Specifies the command to run the container
+- **CMD**: Specifies a command to run at the time of container execution (can be overridden)
+- **COPY**: Simple copy of files/directories from host to container
+- **ADD**: Similar to `COPY` but with additional features like downloading from URLs (not recommended)
+- **ENV**: Set environment variables
+- **EXPOSE**: Opens designated port
+- **WORKDIR**: Changes the current directory
+- **MAINTAINER**: Deprecated (use `LABEL` instead)
