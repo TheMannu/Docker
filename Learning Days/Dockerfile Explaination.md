@@ -15,3 +15,12 @@ ENTRYPOINT ["/bin/server"]
 
 ### What is a Dockerfile?
 A Dockerfile is a text document that contains all the commands needed to assemble an image. Docker can automatically build images by reading the instructions from the Dockerfile.
+
+### Simple Dockerfile Example
+```dockerfile
+FROM ubuntu
+MAINTAINER clouddevopshub@gmail.com
+RUN apt-get update
+RUN apt-get install nginx -y
+CMD ["echo", "Image created"]
+```
