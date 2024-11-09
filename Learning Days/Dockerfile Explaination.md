@@ -59,3 +59,14 @@ CMD ["echo", "Image created"]
     MAINTAINER <name>
     ```
 - Information:- Specifies the author of the image. Deprecated in favor of `LABEL`.
+
+#### **RUN**
+- *Usage*:
+    ```dockerfile
+    RUN <command> # (shell form, the command is run in a shell, which by default is /bin/sh -c on Linux or cmd/S/C on Windows)
+    RUN ["<executable>", "<param1>", "<param2>"]  # (Exec form)
+    ```
+- *Information*:
+    - The exec form is preferred to avoid shell munging. And to RUN commands using a base image that does not contain the specified shell executable.
+    - For the shell form, `/bin/sh -c` is the default shell on Linux.
+    - Normal shell processing does not occur when using the exec form. For example, `RUN ["echo", "$HOME"]` will not do variable substitution on `$HOME`.
