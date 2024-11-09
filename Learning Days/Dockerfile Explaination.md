@@ -88,3 +88,15 @@ CMD ["echo", "Image created"]
     - If the user specifies arguments to docker run then they will override the default specified in `CMD`.
 
     - Normal shell processing does not occur when using the exec form. For example, `CMD ["echo", "$HOME"]` will not do variable substitution on `$HOME`.
+
+#### **LABEL**
+- *Usage*:
+    ```dockerfile
+    LABEL <key>=<value> [<key>=<value> ...]
+    ```
+- *Information*:
+    - The `LABEL` instruction adds metadata to an image.
+    - To include spaces within a `LABEL` value, use quotes and backslashes as you would in command-line parsing.
+    - Labels are additive including `LABELS` in `FROM` images.
+    - If Docker encounters a label/key that already exists, the new value overrides any previous labels with identical keys.
+    - To view an image’s labels, use the `docker inspect` command. They will be under the `"Labels"` JSON attribute.
