@@ -37,3 +37,13 @@ CMD ["echo", "Image created"]
 - **EXPOSE**: Opens designated port
 - **WORKDIR**: Changes the current directory
 - **MAINTAINER**: Deprecated (use `LABEL` instead)
+
+### Dockerfile, Keywords can be used to customized Images
+
+#### **FROM**
+- *Usage*:
+    ```dockerfile
+    FROM <image>
+    FROM <image>:<tag>
+    FROM <image>@<digest>
+    ```
