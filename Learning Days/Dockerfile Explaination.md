@@ -70,3 +70,21 @@ CMD ["echo", "Image created"]
     - The exec form is preferred to avoid shell munging. And to RUN commands using a base image that does not contain the specified shell executable.
     - For the shell form, `/bin/sh -c` is the default shell on Linux.
     - Normal shell processing does not occur when using the exec form. For example, `RUN ["echo", "$HOME"]` will not do variable substitution on `$HOME`.
+
+#### **CMD**
+- *Usage*:
+    ```dockerfile
+    CMD ["<executable>", "<param1>", "<param2>"]  # (exec form, this is the preferred form)
+    CMD ["<param1>", "<param2>"]  # (as default parameters to ENTRYPOINT)
+    CMD <command> <param1> <param2>  # (Shell form)
+    ```
+- *Information*:
+    - Provides default arguments for a container.The main purpose of a `CMD` is to provide defaults for an executing container. These defaults can include an executable, or they can omit the executable, in which case you must specify an `ENTRYPOINT` instruction as well.
+
+    - There can only be one `CMD` instruction in a Dockerfile. If you list more than one `CMD` then only the last `CMD` will take effect.
+
+    - If `CMD` is used to provide default arguments for the `ENTRYPOINT` instruction, both the `CMD` and `ENTRYPOINT` instructions should be specified with the `JSON` array format.
+
+    - If the user specifies arguments to docker run then they will override the default specified in `CMD`.
+
+    - Normal shell processing does not occur when using the exec form. For example, `CMD ["echo", "$HOME"]` will not do variable substitution on `$HOME`.
