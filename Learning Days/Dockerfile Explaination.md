@@ -52,3 +52,10 @@ CMD ["echo", "Image created"]
     - `FROM` Must be the first non-comment instruction in the Dockerfile.
     - `FROM` can appear multiple times within a single Dockerfile to create multiple images.Simply make a note of the last image ID output by the commit before each new `FROM` command.
     - The `tag` or `digest` values are optional. If you omit either of them, the builder assumes `latest` by default.The builder returns an error if it cannot match the `tag` value.
+
+#### **MAINTAINER**
+- *Usage*:
+    ```dockerfile
+    MAINTAINER <name>
+    ```
+- Information:- Specifies the author of the image. Deprecated in favor of `LABEL`.
