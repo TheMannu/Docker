@@ -146,3 +146,15 @@ CMD ["echo", "Image created"]
     - <src> must be relative to the source directory that is being built (the context of the build).
     - <dest> is an absolute path, or a path relative to WORKDIR.
     - If <dest> doesn’t exist, it is created along with all missing directories in its path.
+
+#### **ENTRYPOINT**
+- *Usage*:
+    ```dockerfile
+    ENTRYPOINT ["<executable>", "<param1>", "<param2>"]  # Exec form, prefered
+    ENTRYPOINT <command> <param1> <param2>  # Shell form
+    ```
+- *Information*: 
+    - Allows you to configure a container that will run as an executable.
+    - Command line arguments to docker run <image> will be appended after all elements in an exec form ENTRYPOINT and will override all elements specified using CMD.
+    - The shell form prevents any CMD or run command line arguments from being used, but the ENTRYPOINT will start via the shell. This means the executable will not be PID 1 nor will it receive UNIX signals. Prepend exec to get around this drawback.
+    - Only the last ENTRYPOINT instruction in the Dockerfile will have an effect.
