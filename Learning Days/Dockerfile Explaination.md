@@ -109,3 +109,15 @@ CMD ["echo", "Image created"]
 - *Information*:
     - Informs Docker that the container listens on the specified network port(s) at runtime. 
     - `EXPOSE` Does not make the ports accessible to the host.
+
+#### **ENV**
+- *Usage*:
+    ```dockerfile
+    ENV <key> <value>
+    ENV <key>=<value> [<key>=<value> ...]
+    ```
+- *Information*:
+    - The ENV instruction sets the environment variable <key> to the value <value>.
+    - The value will be in the environment of all “descendant” Dockerfile commands and can be replaced inline as well.
+    - The environment variables set using ENV will persist when a container is run from the resulting image.
+    - The first form will set a single variable to a value with the entire string after the first space being treated as the <value> - including characters such as spaces and quotes.
