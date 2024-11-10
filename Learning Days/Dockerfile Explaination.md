@@ -121,3 +121,15 @@ CMD ["echo", "Image created"]
     - The value will be in the environment of all “descendant” Dockerfile commands and can be replaced inline as well.
     - The environment variables set using ENV will persist when a container is run from the resulting image.
     - The first form will set a single variable to a value with the entire string after the first space being treated as the <value> - including characters such as spaces and quotes.
+
+#### **ADD**
+- *Usage*:
+    ```dockerfile
+    ADD <src> [<src> ...] <dest> #(this form is required for paths containing whitespace)
+    ```
+- *Information*:
+    - Copies new files, directories, or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.
+    - <src> may contain wildcards and matching will be done using Go’s filepath.Match rules.
+    - If <src> is a file or directory, then they must be relative to the source directory that is being built (the context of the build).
+    - <dest> is an absolute path, or a path relative to WORKDIR.
+    - If <dest> doesn’t exist, it is created along with all missing directories in its path.
