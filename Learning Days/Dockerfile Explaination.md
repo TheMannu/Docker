@@ -158,3 +158,12 @@ CMD ["echo", "Image created"]
     - Command line arguments to docker run <image> will be appended after all elements in an exec form ENTRYPOINT and will override all elements specified using CMD.
     - The shell form prevents any CMD or run command line arguments from being used, but the ENTRYPOINT will start via the shell. This means the executable will not be PID 1 nor will it receive UNIX signals. Prepend exec to get around this drawback.
     - Only the last ENTRYPOINT instruction in the Dockerfile will have an effect.
+
+#### **VOLUME**
+- *Usage*:
+    ```dockerfile
+    VOLUME ["<path>", ...]
+    VOLUME <path> [<path> ...]
+    ```
+- *Information*:
+    - Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
