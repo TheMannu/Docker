@@ -100,3 +100,12 @@ CMD ["echo", "Image created"]
     - Labels are additive including `LABELS` in `FROM` images.
     - If Docker encounters a label/key that already exists, the new value overrides any previous labels with identical keys.
     - To view an image’s labels, use the `docker inspect` command. They will be under the `"Labels"` JSON attribute.
+
+#### **EXPOSE**
+- *Usage*:
+    ```dockerfile
+    EXPOSE <port> [<port> ...]
+    ```
+- *Information*:
+    - Informs Docker that the container listens on the specified network port(s) at runtime. 
+    - `EXPOSE` Does not make the ports accessible to the host.
