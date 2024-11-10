@@ -133,3 +133,16 @@ CMD ["echo", "Image created"]
     - If <src> is a file or directory, then they must be relative to the source directory that is being built (the context of the build).
     - <dest> is an absolute path, or a path relative to WORKDIR.
     - If <dest> doesn’t exist, it is created along with all missing directories in its path.
+
+#### **COPY**
+- *Usage*:
+    ```dockerfile
+    COPY <src> [<src> ...] <dest>
+    COPY ["<src>", ... "<dest>"] #(this form is required for paths containing whitespace)
+    ```
+- *Information*:
+    - Copies new files or directories from <src> and adds them to the filesystem of the image at the path <dest>.
+    - <src> may contain wildcards and matching will be done using Go’s filepath.Match rules.
+    - <src> must be relative to the source directory that is being built (the context of the build).
+    - <dest> is an absolute path, or a path relative to WORKDIR.
+    - If <dest> doesn’t exist, it is created along with all missing directories in its path.
