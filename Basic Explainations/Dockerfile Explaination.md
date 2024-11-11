@@ -213,3 +213,11 @@ CMD ["echo", "Image created"]
     - Any build instruction can be registered as a trigger.
     - Triggers are inherited by the "child" build only. In other words, they are not inherited by "grand-children" builds.
     - The `ONBUILD` instruction may not trigger `FROM`, `MAINTAINER`, or `ONBUILD` instructions.
+    
+#### **STOPSIGNAL**
+- *Usage*:
+    ```dockerfile
+    STOPSIGNAL <signal>
+    ```
+- **Information**:
+    - The `STOPSIGNAL` instruction sets the system call signal that will be sent to the container to exit. This signal can be a valid unsigned number that matches a position in the kernel’s syscall table, for instance 9, or a signal name in the format `SIGNAME`, for instance `SIGKILL`.Reference
