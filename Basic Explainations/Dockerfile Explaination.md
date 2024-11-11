@@ -177,3 +177,12 @@ CMD ["echo", "Image created"]
     - The `USER` instruction sets the user name or UID to use when running the image and for any `RUN`, `CMD` and `ENTRYPOINT` instructions that follow it in the Dockerfile.
     
     Reference - Best Practices
+
+#### **WORKDIR**
+- *Usage*:
+    ```dockerfile
+    WORKDIR </path/to/workdir>
+    ```
+- **Information**:
+    - Sets the working directory for any `RUN`, `CMD`, `ENTRYPOINT`, `COPY`, and `ADD` instructions that follow it.
+    - It can be used multiple times in the one Dockerfile. If a relative path is provided, it will be relative to the path of the previous `WORKDIR` instruction.
