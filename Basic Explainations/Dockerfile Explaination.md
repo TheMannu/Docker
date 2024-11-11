@@ -186,3 +186,19 @@ CMD ["echo", "Image created"]
 - **Information**:
     - Sets the working directory for any `RUN`, `CMD`, `ENTRYPOINT`, `COPY`, and `ADD` instructions that follow it.
     - It can be used multiple times in the one Dockerfile. If a relative path is provided, it will be relative to the path of the previous `WORKDIR` instruction.
+
+#### **ARG**
+- *Usage*:
+    ```dockerfile
+    ARG <name>[=<default value>]
+    ```
+- *Information*:
+    - Defines a variable that users can pass at build-time to the builder with the docker build command using the `--build-arg <varname>=<value>` flag.
+    - Multiple variables may be defined by specifying ARG multiple times.
+    - It is not recommended to use build-time variables for passing secrets like github keys, user credentials, etc. Build-time variable values are visible to any user of the image with the docker history command.
+    - Environment variables defined using the ENV instruction always override an ARG instruction of the same name.
+    - Docker has a set of predefined ARG variables that you can use without a corresponding ARG instruction in the Dockerfile.
+        - HTTP_PROXY and http_proxy
+        - HTTPS_PROXY and https_proxy
+        - FTP_PROXY and ftp_proxy
+        - NO_PROXY and no_proxy
