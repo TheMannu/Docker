@@ -167,3 +167,13 @@ CMD ["echo", "Image created"]
     ```
 - *Information*:
     - Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
+
+#### **USER**
+- *Usage*:
+    ```dockerfile
+    USER <username | UID>
+    ```
+- *Information*:
+    - The `USER` instruction sets the user name or UID to use when running the image and for any `RUN`, `CMD` and `ENTRYPOINT` instructions that follow it in the Dockerfile.
+    
+    Reference - Best Practices
