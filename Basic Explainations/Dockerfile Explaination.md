@@ -202,3 +202,14 @@ CMD ["echo", "Image created"]
         - HTTPS_PROXY and https_proxy
         - FTP_PROXY and ftp_proxy
         - NO_PROXY and no_proxy
+
+#### **ONBUILD**
+- *Usage*:
+    ```dockerfile
+    ONBUILD <Dockerfile INSTRUCTION>
+    ```
+- *Information*:
+    - Adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. The trigger will be executed in the context of the downstream build, as if it had been inserted immediately after the `FROM` instruction in the downstream Dockerfile.
+    - Any build instruction can be registered as a trigger.
+    - Triggers are inherited by the "child" build only. In other words, they are not inherited by "grand-children" builds.
+    - The `ONBUILD` instruction may not trigger `FROM`, `MAINTAINER`, or `ONBUILD` instructions.
