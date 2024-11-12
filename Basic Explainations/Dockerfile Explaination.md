@@ -224,7 +224,7 @@ CMD ["echo", "Image created"]
 
 - **Information**:
     - The `STOPSIGNAL` instruction sets the system call signal that will be sent to the container to exit. This signal can be a valid unsigned number that matches a position in the kernel’s syscall table, for instance 9, or a signal name in the format `SIGNAME`, for instance `SIGKILL`.Reference
-    
+
 #### **HEALTHCHECK**
 - *Usage*:
     ```dockerfile
@@ -247,3 +247,13 @@ CMD ["echo", "Image created"]
         - 2: reserved - do not use this exit code
     - The first 4096 bytes of stdout and stderr from the `<command>` are stored and can be queried with `docker inspect`.
     - When the health status of a container changes, a `health_status` event is generated with the new status.
+
+#### **SHELL**
+- *Usage*:
+    ```dockerfile
+    SHELL ["<executable>", "<param1>", "<param2>"]
+    ```
+- *Information*:
+    - Allows the default shell used for the shell form of commands to be overridden.
+    - `Each SHELL` instruction overrides all previous `SHELL` instructions, and affects all subsequent instructions.
+    - Allows an alternate shell be used such as `zsh`, `csh`, `tcsh`, `powershell`, and others.
