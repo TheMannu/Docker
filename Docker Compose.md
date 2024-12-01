@@ -12,3 +12,29 @@ Docker is a set of platform as a service products that use OS-level virtualizati
 
 ## Certification:
 - [Containers Fundamentals Certification](https://training.linuxfoundation.org/training/containers-fundamentals/)
+
+## Docker and Docker Compose Tasks:
+
+### 1. Install Docker and Docker Compose on Linux:
+
+**Steps:**
+
+- Update package list:
+  ```bash
+  sudo apt update
+  ```
+
+- Install dependencies:
+  ```bash
+  sudo apt update
+  ```
+
+- Add Docker's GPG key:
+  ```bash
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  ```
+
+- Add Docker repository:
+  ```bash
+  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  ```
