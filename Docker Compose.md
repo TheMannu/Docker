@@ -38,3 +38,23 @@ Docker is a set of platform as a service products that use OS-level virtualizati
   ```bash
   sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
   ```
+
+- Update package list again:
+  ```bash
+  sudo apt update
+  ```
+
+- Install Docker Engine:
+  ```bash
+  sudo apt install -y docker-ce
+  ```
+
+- Verify Docker installation:
+  ```bash
+  sudo systemctl status docker
+  ```
+
+- Add user to Docker group:
+  ```bash
+  sudo usermod -aG docker $USER
+  ```
