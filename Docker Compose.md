@@ -89,3 +89,10 @@ Docker is a set of platform as a service products that use OS-level virtualizati
   ```bash
   docker ps
   ```
+
+### 3. Docker Push an Image to Docker Hub:
+```bash
+docker tag my-image:latest myusername/my-image:latest
+docker login
+docker push myusername/my-image:latest
+```
