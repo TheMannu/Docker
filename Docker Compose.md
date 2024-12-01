@@ -73,3 +73,19 @@ Docker is a set of platform as a service products that use OS-level virtualizati
   ```bash
   docker-compose --version
   ```
+
+### 2. Use Docker CLI to run an Nginx server locally and expose it on port 8080:
+- Pull Nginx Image:
+  ```bash
+  sudo docker pull nginx
+  ```
+
+- Run Nginx Container:
+  ```bash
+  docker run -d -p 8080:80 --name my-nginx nginx
+  ```
+
+- Verify Nginx Container Status:
+  ```bash
+  docker ps
+  ```
