@@ -263,3 +263,6 @@ docker-compose down
   EOF
 
 ```
+
+### 8. Attach Docker Volume and Read the File Dynamically in the Container from Outside:
+(Details to be filled as per setup requirements)
