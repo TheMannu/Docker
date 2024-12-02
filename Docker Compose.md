@@ -223,3 +223,43 @@ docker-compose down
   ```bash
   docker run -p 8080:80 custom-nginx
   ```
+
+### 7. Create a Docker Compose File with 3 Nginx Services Outputting "Hello World 1", "Hello World 2", and "Hello World 3":
+- Create `docker-compose.yml`:
+```bash
+  cat > docker-compose.yml <<EOF
+  version: '3.8'
+
+  services:
+    nginx1:
+      image: nginx:latest
+      ports:
+        - "8081:80"
+      environment:
+        - MESSAGE=hello-world 1
+      networks:
+        - my-network
+
+    nginx2:
+      image: nginx:latest
+      ports:
+        - "8082:80"
+      environment:
+        - MESSAGE=hello-world 2
+      networks:
+        - my-network
+
+    nginx3:
+      image: nginx:latest
+      ports:
+        - "8083:80"
+      environment:
+        - MESSAGE=hello-world 3
+      networks:
+        - my-network
+
+  networks:
+    my-network:
+  EOF
+
+```
