@@ -96,3 +96,12 @@ docker tag my-image:latest myusername/my-image:latest
 docker login
 docker push myusername/my-image:latest
 ```
+
+### 4. Run Docker Commands Without Sudo:
+```bash
+cat /etc/group | grep docker
+sudo usermod -aG docker <username>
+logout
+groups
+docker info
+```
