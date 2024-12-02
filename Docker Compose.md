@@ -213,3 +213,13 @@ docker-compose down
   </html>
   EOF
   ```
+
+- Build Docker Image:
+  ```bash
+  docker build -t custom-nginx .
+  ```
+
+- Run Docker Container:
+  ```bash
+  docker run -p 8080:80 custom-nginx
+  ```
