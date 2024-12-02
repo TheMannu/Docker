@@ -105,3 +105,57 @@ logout
 groups
 docker info
 ```
+
+### 5. Learn Basic Docker CLI Commands:
+```bash
+# Display Docker version information
+docker version
+
+# Show detailed Docker system information
+docker info
+
+# List all Docker images
+docker images
+
+# List running containers
+docker ps
+
+# Pull a Docker image from a registry (e.g., Docker Hub)
+docker pull <image-name>
+
+# Create and start a new container based on an image
+docker run <image-name>
+
+# Create and start a container in detached mode (background)
+docker run -d <image-name>
+
+# Stop a running container
+docker stop <container-id>
+
+# Start a stopped container
+docker start <container-id>
+
+# Restart a container
+docker restart <container-id>
+
+# Remove a stopped container
+docker rm <container-id>
+
+# Remove a Docker image
+docker rmi <image-id>
+
+# Execute a command inside a running container in interactive mode
+docker exec -it <container-id> <command>
+
+# Display logs of a running container
+docker logs <container-id>
+
+# Build a Docker image from a Dockerfile and tag it
+docker build -t <image-name> <path-to-dockerfile>
+
+# Start services defined in a Docker Compose file
+docker-compose up
+
+# Stop and remove services defined in a Docker Compose file
+docker-compose down
+```
