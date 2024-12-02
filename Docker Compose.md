@@ -159,3 +159,57 @@ docker-compose up
 # Stop and remove services defined in a Docker Compose file
 docker-compose down
 ```
+
+### 6. Write a Dockerfile to Create a Custom Nginx Server that Outputs "Hello World":
+- Create Project Directory and Navigate:
+  ```bash
+  mkdir custom-nginx
+  cd custom-nginx
+  ```
+
+- Create Dockerfile:
+  ```bash
+  cat > Dockerfile <<EOF
+  FROM nginx:latest
+  COPY nginx.conf /etc/nginx/nginx.conf
+  RUN mkdir -p /usr/share/nginx/html
+  COPY index.html /usr/share/nginx/html/index.html
+  EXPOSE 80
+  CMD ["nginx", "-g", "daemon off;"]
+  EOF
+  ```
+
+- Create `nginx.conf`:
+  ```bash
+  cat > nginx.conf <<EOF
+  worker_processes 1;
+  events {
+      worker_connections 1024;
+  }
+  http {
+      server {
+          listen 80;
+          server_name localhost;
+          location / {
+              root /usr/share/nginx/html;
+              index index.html;
+          }
+      }
+  }
+  EOF
+  ```
+
+- Create `index.html`:
+  ```bash
+  cat > index.html <<EOF
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Hello, World!</title>
+  </head>
+  <body>
+      <h1>Hello, World!</h1>
+  </body>
+  </html>
+  EOF
+  ```
