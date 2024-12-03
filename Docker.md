@@ -347,3 +347,12 @@
 ```
 
 ---
+
+
+## Resources:
+- [Video: Docker in 45 minutes](https://www.youtube.com/watch?v=3c-iBn73dDE&t=1485s)
+- [Video: Docker Overview](https://www.youtube.com/watch?v=WmcdMiyqfZs)
+- [Video: Docker Tutorial](https://www.youtube.com/watch?v=EoY1i8Ids1w)
+- [Video: Docker Networking](https://www.youtube.com/watch?v=MVIcrmeV_6c)
+- [Video: Docker Basics](https://www.youtube.com/watch?v=Qw9zlE3t8Ko)
+- [Playlist: Docker Full Course](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7)
