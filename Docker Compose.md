@@ -292,3 +292,23 @@ docker-compose down
   
   exit
   ```
+
+### 10. Create Two Dockerfiles for Nginx with CMD and ENTRYPOINT:
+
+- Dockerfile using CMD:
+
+```bash
+  FROM nginx:latest
+  COPY index.html /usr/share/nginx/html/index.html
+  CMD ["nginx", "-g", "daemon off;"]
+
+```
+
+- Dockerfile using ENTRYPOINT:
+
+```bash
+  FROM nginx:latest
+  COPY index.html /usr/share/nginx/html/index.html
+  ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+```
