@@ -266,3 +266,29 @@ docker-compose down
 
 ### 8. Attach Docker Volume and Read the File Dynamically in the Container from Outside:
 (Details to be filled as per setup requirements)
+
+### 9. Shell into a Running Container and Execute Basic Commands:
+
+```bash
+# List running containers and find the ID or name of the container you want to shell into:
+  
+  docker ps
+  
+
+  # Shell into the container:
+  
+  docker exec -it <container-id-or-name> /bin/bash
+  
+
+  # Inside the container's shell, you can execute commands like:
+  
+  ls
+  pwd
+  whoami
+  uname
+  
+
+  # Exit the container's shell:
+  
+  exit
+  ```
