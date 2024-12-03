@@ -312,3 +312,28 @@ docker-compose down
   ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 ```
+
+### 11. Create a Multi-Stage Build Dockerfile for Nginx:
+```bash
+  # Stage 1: Build stage
+  
+  FROM node:14 as build-stage
+
+  WORKDIR /app
+
+  COPY package*.json ./
+  RUN npm install
+
+  COPY . .
+  RUN npm run build
+  
+  # Stage 2: Production stage
+  
+  FROM nginx:alpine
+
+  COPY --from=build-stage /app/buid /usr/share/nginx/html
+
+  EXPOSE 80
+  CMD ["nginx", "-g", "daemon off;"]
+
+```
