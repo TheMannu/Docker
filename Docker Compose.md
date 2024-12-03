@@ -337,3 +337,9 @@ docker-compose down
   CMD ["nginx", "-g", "daemon off;"]
 
 ```
+
+### Additional Topics:
+1. `docker run --rm -d -p 8080:80 nginx`
+2. Dockerfile multi-stage building
+3. Inspecting Docker logs and container history
+
