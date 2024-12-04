@@ -24,3 +24,19 @@ COPY ${BUILD_FILE} /etc/nginx/conf.d
 - The **alpine** service should use `alpine.conf` as the `BUILD_FILE` argument.
   
 Both `debian.conf` and `alpine.conf` are located in the same directory as `docker-compose.yaml`.
+
+
+## Example Directory Structure:
+```shell
+test-solver@codility:/task/docker_compose_build$ ls -al app
+total 12
+drwxrwxr-x 3 test-solver test-solver 4096 Mar  7 13:58 .
+drwxrwxr-x 6 test-solver test-solver 4096 Mar  7 13:57 ..
+-rw-rw-r-- 1 test-solver test-solver 4096 Mar  7 13:58 alpine.conf
+-rw-rw-r-- 1 test-solver test-solver 4096 Mar  7 13:58 debian.conf
+-rw-rw-r-- 1 test-solver test-solver 4096 Mar  7 13:57 docker-compose.yaml
+drwxrwxr-x 7 test-solver test-solver 4096 Mar  7 13:57 .git
+-rw-rw-r-- 1 test-solver test-solver 4096 Mar  7 13:57 nginx.Dockerfile
+-rw-rw-r-- 1 test-solver test-solver 4096 Mar  7 13:57 .env
+```
+
