@@ -16,3 +16,11 @@ ARG BUILD_FILE
 FROM nginx:${NGINX_VERSION}
 COPY ${BUILD_FILE} /etc/nginx/conf.d
 ```
+
+## Requirements:
+- **All images** should be built as `app` with the supported version as a tag.
+- The **stable** service should use a version value tag from the variable `DEFAULT_NGINX_VERSION` in the `.env` file.
+- The **mainline** and **stable** services should use `debian.conf` as the `BUILD_FILE` argument.
+- The **alpine** service should use `alpine.conf` as the `BUILD_FILE` argument.
+  
+Both `debian.conf` and `alpine.conf` are located in the same directory as `docker-compose.yaml`.
