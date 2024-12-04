@@ -40,3 +40,8 @@ drwxrwxr-x 7 test-solver test-solver 4096 Mar  7 13:57 .git
 -rw-rw-r-- 1 test-solver test-solver 4096 Mar  7 13:57 .env
 ```
 
+### Docker Compose Configuration:
+
+1. Define three services: `mainline`, `stable`, and `alpine`.
+2. Ensure each service uses the correct **nginx** version and **BUILD_FILE**.
+3. Execute the build process in the `app` directory as outlined above.
