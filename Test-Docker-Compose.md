@@ -107,3 +107,9 @@ To build and configure the web application using NGINX in three supported versio
    - Each service builds from `nginx.Dockerfile` using the `NGINX_VERSION` and `BUILD_FILE` as arguments.
    - The `mainline` and `stable` services use `debian.conf`, while the `alpine` service uses `alpine.conf`.
 
+5. **Running the Build**
+   - Navigate to the directory containing `docker-compose.yaml` and run:
+     ```bash
+     docker-compose up --build
+     ```
+
