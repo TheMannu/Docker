@@ -49,3 +49,13 @@ drwxrwxr-x 7 test-solver test-solver 4096 Mar  7 13:57 .git
 ### Docker Compose Setup for NGINX Application
 
 To build and configure the web application using NGINX in three supported versions (`mainline`, `stable`, and `alpine`), you need to create a `docker-compose.yaml` file that defines services for each version and builds them from the same `nginx.Dockerfile`. Below is a step-by-step guide to implementing the solution based on the provided specifications.
+
+### Steps:
+
+1. **Create `.env` File**
+   - This file should contain the default NGINX version to be used for the `stable` service.
+   - Add the following line to `.env`:
+     ```bash
+     DEFAULT_NGINX_VERSION=1.18.0
+     ```
+
