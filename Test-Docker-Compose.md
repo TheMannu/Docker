@@ -59,3 +59,13 @@ To build and configure the web application using NGINX in three supported versio
      DEFAULT_NGINX_VERSION=1.18.0
      ```
 
+2. **Create `nginx.Dockerfile`**
+   - The `Dockerfile` will handle the build process for each version of NGINX. It should look like this:
+     ```Dockerfile
+     ARG NGINX_VERSION
+     ARG BUILD_FILE
+     FROM nginx:${NGINX_VERSION}
+     COPY ${BUILD_FILE} /etc/nginx/conf.d/default.conf
+     ```
+
+
