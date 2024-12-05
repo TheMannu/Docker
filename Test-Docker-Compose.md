@@ -69,3 +69,37 @@ To build and configure the web application using NGINX in three supported versio
      ```
 
 
+3. **Create the `docker-compose.yaml` File**
+   - In the same directory as `nginx.Dockerfile`, create the `docker-compose.yaml` with the following content:
+   
+     ```yaml
+     version: '3.7'
+     services:
+       mainline:
+         build:
+           context: .
+           dockerfile: nginx.Dockerfile
+           args:
+             NGINX_VERSION: 1.17.9-perl
+             BUILD_FILE: debian.conf
+         image: app:1.17.9-perl
+
+       stable:
+         build:
+           context: .
+           dockerfile: nginx.Dockerfile
+           args:
+             NGINX_VERSION: ${DEFAULT_NGINX_VERSION}
+             BUILD_FILE: debian.conf
+         image: app:${DEFAULT_NGINX_VERSION}
+
+       alpine:
+         build:
+           context: .
+           dockerfile: nginx.Dockerfile
+           args:
+             NGINX_VERSION: 1.17.9-alpine-perl
+             BUILD_FILE: alpine.conf
+         image: app:1.17.9-alpine-perl
+     ```
+
