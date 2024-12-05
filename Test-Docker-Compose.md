@@ -45,3 +45,7 @@ drwxrwxr-x 7 test-solver test-solver 4096 Mar  7 13:57 .git
 1. Define three services: `mainline`, `stable`, and `alpine`.
 2. Ensure each service uses the correct **nginx** version and **BUILD_FILE**.
 3. Execute the build process in the `app` directory as outlined above.
+
+### Docker Compose Setup for NGINX Application
+
+To build and configure the web application using NGINX in three supported versions (`mainline`, `stable`, and `alpine`), you need to create a `docker-compose.yaml` file that defines services for each version and builds them from the same `nginx.Dockerfile`. Below is a step-by-step guide to implementing the solution based on the provided specifications.
