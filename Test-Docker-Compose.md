@@ -103,3 +103,7 @@ To build and configure the web application using NGINX in three supported versio
          image: app:1.17.9-alpine-perl
      ```
 
+4. **Build Arguments**
+   - Each service builds from `nginx.Dockerfile` using the `NGINX_VERSION` and `BUILD_FILE` as arguments.
+   - The `mainline` and `stable` services use `debian.conf`, while the `alpine` service uses `alpine.conf`.
+
