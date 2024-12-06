@@ -156,3 +156,35 @@ services:
         BUILD_FILE: alpine.conf
     image: app:1.17.9-alpine-perl
 ```
+
+---
+## Correct yaml file for Docker compose 
+
+```yaml
+version: "3.7"
+services:
+  mainline:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+      args:
+        NGINX_VERSION: 1.17.9-perl
+        BUILD_FILE: debian.conf
+    image: app:mainline
+  stable:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+      args:
+       NGINX_VERSION: ${DEFAULT_NGINX_VERSION}
+       BUILD_FILE: debian.conf
+    image: app:${DEFAULT_NGINX_VERSION}
+  alpine:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+      args:
+        NGINX_VERSION: 1.17.9-alpine-perl
+        BUILD_FILE: alpine.conf
+    image: app:alpine
+```
