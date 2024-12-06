@@ -113,3 +113,13 @@ To build and configure the web application using NGINX in three supported versio
      docker-compose up --build
      ```
 
+
+### Directory Structure
+
+Ensure the following files are in place:
+
+- `docker-compose.yaml`
+- `nginx.Dockerfile`
+- `debian.conf`
+- `alpine.conf`
+- `.env` (with `DEFAULT_NGINX_VERSION` variable)
