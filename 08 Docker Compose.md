@@ -230,6 +230,16 @@ docker-compose down
 
 ---
 
+## 🔹 What is Docker Compose?
+
+**Docker Compose** is a tool that:
+
+* Allows you to define services (containers), networks, and volumes in a single YAML file (`docker-compose.yml`).
+* Brings up and tears down multi-container environments with one command.
+* Keeps your infrastructure version-controlled and reproducible.
+
+---
+
 - Create `docker-compose.yml`:
 ```bash
   cat > docker-compose.yml <<EOF
