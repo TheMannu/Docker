@@ -274,6 +274,16 @@ docker-compose up -d
 
 ---
 
+### 📋 Step 3: Verify
+
+```bash
+docker ps   # See if mongo and mongo-express are running
+docker-compose logs  # Check logs if needed
+```
+
+---
+
+
 - Create `docker-compose.yml`:
 ```bash
   cat > docker-compose.yml <<EOF
