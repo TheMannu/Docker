@@ -225,6 +225,11 @@ docker-compose down
   ```
 
 ### 7. Create a Docker Compose File with 3 Nginx Services Outputting "Hello World 1", "Hello World 2", and "Hello World 3":
+
+#### Instead of running multiple `docker run` commands, you can simplify and manage your multi-container setup using **Docker Compose**. It’s a powerful tool that lets you define and run multi-container Docker applications using a single YAML file.
+
+---
+
 - Create `docker-compose.yml`:
 ```bash
   cat > docker-compose.yml <<EOF
