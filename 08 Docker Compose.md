@@ -264,6 +264,15 @@ nano docker-compose.yml  # Or any text editor
 
 ---
 
+### ▶️ Step 2: Start the Containers
+
+```bash
+docker-compose up -d
+```
+
+* `-d`: Detached mode (runs in background).
+
+---
 
 - Create `docker-compose.yml`:
 ```bash
