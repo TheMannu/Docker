@@ -251,6 +251,20 @@ docker-compose down
 
 ---
 
+## 🔹 How to Use Docker Compose
+
+### 📁 Step 1: Create `docker-compose.yml`
+
+In your project directory:
+
+```bash
+nano docker-compose.yml  # Or any text editor
+# Paste the above YAML
+```
+
+---
+
+
 - Create `docker-compose.yml`:
 ```bash
   cat > docker-compose.yml <<EOF
