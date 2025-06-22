@@ -240,6 +240,17 @@ docker-compose down
 
 ---
 
+## 🔹 Why Use Docker Compose?
+
+| Feature                      | Benefit                                                                                               |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Single Command Up/Down**   | Easily start or stop all services using `docker-compose up/down`.                                     |
+| **Configuration Management** | All settings (ports, environment, volumes, networks) are stored in one YAML file.                     |
+| **Automatic Networking**     | Services can talk to each other by their service names. No need to define external networks manually. |
+| **Scaling**                  | Easily scale services using `docker-compose up --scale`.                                              |
+
+---
+
 - Create `docker-compose.yml`:
 ```bash
   cat > docker-compose.yml <<EOF
