@@ -283,6 +283,13 @@ docker-compose logs  # Check logs if needed
 
 ---
 
+### 🛑 Step 4: Stop and Remove All Containers
+
+```bash
+docker-compose down
+```
+
+---
 
 - Create `docker-compose.yml`:
 ```bash
