@@ -291,6 +291,20 @@ docker-compose down
 
 ---
 
+## 🔚 Summary
+
+Using Docker Compose:
+
+* Saves time.
+* Reduces errors due to multiple manual commands.
+* Automatically creates a shared network.
+* Makes your setup easily shareable and version-controlled.
+
+You can extend this further by adding **volumes**, **custom networks**, or even **restart policies**.
+
+---
+---
+
 - Create `docker-compose.yml`:
 ```bash
   cat > docker-compose.yml <<EOF
